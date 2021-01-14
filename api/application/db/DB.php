@@ -53,7 +53,7 @@ class DB {
     }
 
     public function getRecords() {
-        $stmt = $this->conn->prepare("SELECT name, score FROM users ORDER BY score DESC LIMIT 5");
+        $stmt = $this->conn->prepare("SELECT * FROM users LIMIT 1");
         $stmt->execute();
         return $stmt->fetch();
     }

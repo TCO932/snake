@@ -18,7 +18,7 @@ window.onload = function (){
         SPLIT: 10
     });
 
-    snake = new Snake(40, 40, 5, 1);
+    snake = new Snake(0, 0, 5, 1);
     fruit = new Fruit(20, 20);
     
     window.addEventListener("keydown", onKeyDown, false);
@@ -74,14 +74,13 @@ window.onload = function (){
 
             //Проверка на столкновение с едой
             if (snake.coord[0].x == fruit.x && snake.coord[0].y == fruit.y){
-                fruit.eat(canvas.WIDTH/10, canvas.HEIGHT/10);
+                fruit.eat(50, 50);
                 snake.grow();
             }
 
             render();//рисуем сцену
             requestAnimFrame(animloop); //зацикливаем отрисовку
-            document.getElementById("FPS").innerHTML = "FPS: " + FPSout;
-            document.getElementById("count").innerHTML = "Count: " + fruit.count;
+            canvas.drawText(10, 10, "Score: " + fruit.count);
     }})();
 
     //Отрисовка изображения

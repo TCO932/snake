@@ -5,8 +5,8 @@ require_once ('user/User.php');
 
 class Application { 
     function __construct(){
-        $db = new DB();
-        $this->user = new User($db);
+        $this->db = new DB();
+        $this->user = new User($this->db);
     }
 
     public function login($params){
@@ -39,7 +39,7 @@ class Application {
 	}
 	
 	public function getRecords(){
-		return $this->db->getRecords;
+		return $this->db->getRecords();
 	}
     
 }

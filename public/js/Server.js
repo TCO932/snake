@@ -1,12 +1,13 @@
 class Server {
 
-	constructor(callbackGetMessages){
+	constructor(callbackGetRecords) {
 		this.token = localStorage.getItem('token');
         this.interval;
-        this.recordsHash = {};
+        //this.recordsHash = {};
 		this.callbackGetRecords = callbackGetRecords || function() {};
 		if (this.token) {
-            this.interval = setInterval(() => this.getRecords(),1000);
+            this.interval = setInterval(() => this.getRecords(), 1000);
+
         }
 	}
 
@@ -57,13 +58,13 @@ class Server {
 	async getRecords() {
 		const result = await this.getData('getRecords');
 		if (result) {
-			this.recordsHash = result.hash;
+            //console.log(result);
+			//this.recordsHash = result.hash;
 			this.callbackGetRecords(result.records);
 		}
 	}
 	
 	sendScore(score) {
 		this.getData('sendScore', { score });
-        return this.getData('logout');
 	}
 }

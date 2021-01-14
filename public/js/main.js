@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    if (localStorage.getItem('token') == )
+    //if (localStorage.getItem('token') == )
 
     const reg_btn = document.getElementById('reg_btn');
     const login_btn = document.getElementById('login_btn');

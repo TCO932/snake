@@ -17,7 +17,7 @@ class Canvas{
     }
 
      //написание текста
-    text(x, y, text, font = '15px bold Arial', color = '#000'){
+    drawText(x, y, text, font = '15px bold Arial', color = '#000'){
         this.context.fillStyle = color;
         this.context.font = font;
         this.context.fillText(text, x, y);
