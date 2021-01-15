@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="public/css/styles.css">
     <script src="public/js/Server.js"></script>
-    <script src="public/js/entities/Point.js"></script>
-    <script src="public/js/entities/Fruit.js"></script>
-    <script src="public/js/entities/Snake.js"></script>
-    <script src="public/js/canvas.js"></script>
     <script src="public/js/main.js"></script>
 </head>
 <body>
-    <div id="left">
-        <canvas id="canvas" height = 500 width = 500></canvas>
+    <div class="container">
+        <div class="login">
+            <input id="login" type="text" placeholder="Введите логин" required>
+            <input id="password" type="password" placeholder="Введите пароль" required>
+            <button id="login_btn" type="button">Войти</button>
+            <a id="reg_ref" href="registration.html">Регистрация</a>
+        </div>
     </div>
-    <button id="logout_btn" type="button">Выход</button>
-
     <div id="right">
         <table id="">
             <tr>

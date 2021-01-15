@@ -39,7 +39,7 @@ class DB {
     public function updateToken($id, $token) {
         $stmt = $this->conn->prepare("UPDATE users SET token='$token' WHERE id=$id");
         $stmt->execute();
-        return true;
+        return true; 
     }
 
     public function addNewUser($name, $login, $password) {
@@ -53,9 +53,9 @@ class DB {
     }
 
     public function getRecords() {
-        $stmt = $this->conn->prepare("SELECT * FROM users LIMIT 1");
+        $stmt = $this->conn->prepare("SELECT `name`, `score` FROM `users` ORDER BY `score` DESC");
         $stmt->execute();
-        return $stmt->fetch();
+        return $stmt->fetchAll();
     }
     
 }

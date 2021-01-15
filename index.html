@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="public/css/styles.css">
-    <script src="public/js/Server.js"></script>
-    <script src="public/js/main.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById('log').addEventListener('click', function () {
+                document.location.href = "./login.html";
+            });
+            document.getElementById('reg').addEventListener('click', function () {
+                document.location.href = "./registration.html";
+            })
+        }
+    </script>
+    <title>Start</title>
 </head>
 <body>
-    <div class="container">
-        <div class="login">
-            <input id="login" type="text" placeholder="Введите логин" required>
-            <input id="password" type="password" placeholder="Введите пароль" required>
-            <button id="login_btn" type="button">Войти</button>
-            <a id="reg_ref" href="registration.html">Регистрация</a>
-        </div>
-    </div>
+    <button id="log" type="button">Войти</button>
+    <button id="reg" type="button">Регистрация</button>
 </body>
 </html>

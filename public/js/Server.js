@@ -1,14 +1,6 @@
 class Server {
-
-	constructor(callbackGetRecords) {
+    constructor(callbackGetMessages){
 		this.token = localStorage.getItem('token');
-        this.interval;
-        //this.recordsHash = {};
-		this.callbackGetRecords = callbackGetRecords || function() {};
-		if (this.token) {
-            this.interval = setInterval(() => this.getRecords(), 1000);
-
-        }
 	}
 
     async getData(method, data = {}) {
@@ -25,8 +17,9 @@ class Server {
         }
         console.log(url);
         const request = await fetch(url);
-        console.log(request);
+        //console.log(request);
         const answer = await request.json();
+        //console.log(answer);
         return (answer && answer.result == 'ok') ? answer.data : false;
     }
 
@@ -41,7 +34,6 @@ class Server {
     }
 
     logout() {
-		clearInterval(this.interval);
 		localStorage.setItem('token', '');
         return this.getData('logout');
     }
@@ -56,12 +48,7 @@ class Server {
     }
 	
 	async getRecords() {
-		const result = await this.getData('getRecords');
-		if (result) {
-            //console.log(result);
-			//this.recordsHash = result.hash;
-			this.callbackGetRecords(result.records);
-		}
+		return await this.getData('getRecords');
 	}
 	
 	sendScore(score) {

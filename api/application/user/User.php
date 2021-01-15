@@ -29,7 +29,7 @@ class User {
     public function logout($token) {
         $user = $this->db->getUserByToken($token);
         if($user){
-            $this->db->updateToken($user['ID'], null);
+            $this->db->updateToken($user['ID'], NULL);
             return true;
         }
     }
