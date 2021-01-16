@@ -1,13 +1,12 @@
 window.onload = function () {
 
-    //if (localStorage.getItem('token') == )
-
+    
     const reg_btn = document.getElementById('reg_btn');
     const login_btn = document.getElementById('login_btn');
     const logout_btn = document.getElementById('logout_btn');
     const names = Array.from(document.querySelectorAll('.names'));
     const scores = Array.from(document.querySelectorAll('.scores'));
-
+    
     const server = new Server();
 
     if (login_btn) {
@@ -60,16 +59,15 @@ window.onload = function () {
     
     async function getRecords() {
         const records = await server.getRecords();
-        if (names && scores && records) {
+        if (names.length != 0 && scores.length != 0) {
             for (let i = 0; i < 5; i++) {
                 names[i].innerHTML = (records[i]) ? (records[i]['name']) : '—';
                 scores[i].innerHTML = (records[i]) ? (records[i]['score']) : '—';
             }
         }
-        setInterval(() => getRecords(), 2000)
     }
-    if (names && scores) {
-        //getRecords();
+    if (names.length != 0 && scores.length != 0) {
+        setInterval(() => getRecords(), 2000)
     }
     
     if (document.getElementById('canvas')) {
@@ -142,6 +140,7 @@ window.onload = function () {
                     if (snake.coord[0].x == snake.coord[i].x && snake.coord[0].y == snake.coord[i].y){
                         game = false;
                         alert("You are dead");
+                        server.sendScore(fruit.count);
                     }
                 }
     

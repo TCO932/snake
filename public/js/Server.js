@@ -15,7 +15,7 @@ class Server {
         if (arr.length) {
             url += `&${arr.join('&')}`;
         }
-        console.log(url);
+        //console.log(url);
         const request = await fetch(url);
         //console.log(request);
         const answer = await request.json();

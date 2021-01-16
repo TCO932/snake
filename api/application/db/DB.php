@@ -48,7 +48,7 @@ class DB {
     }
     
     public function sendScore($token, $score) {
-        $stmt = $this->conn->prepare("UPDATE users SET score='$score' WHERE token=$token");
+        $stmt = $this->conn->prepare("UPDATE users SET score=$score WHERE token='$token' AND score<$score");
         $stmt->execute();
     }
 

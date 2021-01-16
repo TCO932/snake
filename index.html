@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
+        if (localStorage.getItem('token')) {
+            document.location.href = "./game.html";
+        }
         window.onload = function() {
             document.getElementById('log').addEventListener('click', function () {
                 document.location.href = "./login.html";

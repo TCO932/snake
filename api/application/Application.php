@@ -30,7 +30,7 @@ class Application {
 		if($params['token'] && $params['score']) {
 			$user = $this->user->getUser($params['token']);
 			if ($user) {
-				$this->chat->sendScore($params['token'], $params['score']);
+				$this->db->sendScore($params['token'], $params['score']);
 				return true;
 			}
 		}

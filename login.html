@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <script>
+        if (localStorage.getItem('token')) {
+            document.location.href = "./game.html";
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -16,34 +21,6 @@
             <button id="login_btn" type="button">Войти</button>
             <a id="reg_ref" href="registration.html">Регистрация</a>
         </div>
-    </div>
-    <div id="right">
-        <table id="">
-            <tr>
-                <td>Name</td>
-                <td>Score</td>
-            </tr>
-            <tr>
-                <td class="names">—</td>
-                <td class="scores">—</td>
-            </tr>
-            <tr>
-                <td class="names">—</td>
-                <td class="scores">—</td>
-            </tr>
-            <tr>
-                <td class="names">—</td>
-                <td class="scores">—</td>
-            </tr>
-            <tr>
-                <td class="names">—</td>
-                <td class="scores">—</td>
-            </tr>
-            <tr>
-                <td class="names">—</td>
-                <td class="scores">—</td>
-            </tr>
-        </table>
     </div>
 </body>
 </html>
