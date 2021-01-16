@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
+    <script>
+        if (!localStorage.getItem('token')) {
+            document.location.href = "./login.html";
+        }
+    </script>
     <script src="public/js/Server.js"></script>
     <script src="public/js/entities/Point.js"></script>
     <script src="public/js/entities/Fruit.js"></script>

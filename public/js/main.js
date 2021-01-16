@@ -71,6 +71,9 @@ window.onload = function () {
     }
     
     if (document.getElementById('canvas')) {
+
+        setInterval(() => server.sendScore(fruit.count), 2000);
+
         window.requestAnimFrame = (function () {
             return window.requestAnimationFrame ||
                 window.webkitRequestAnimationFrame ||
@@ -140,7 +143,6 @@ window.onload = function () {
                     if (snake.coord[0].x == snake.coord[i].x && snake.coord[0].y == snake.coord[i].y){
                         game = false;
                         alert("You are dead");
-                        server.sendScore(fruit.count);
                     }
                 }
     
