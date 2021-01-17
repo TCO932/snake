@@ -3,24 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public\css\reg.css">
     <title>Registration</title>
     <script>
         if (localStorage.getItem('token')) {
             document.location.href = "./game.html";
         }
     </script>
+    
     <link rel="stylesheet" href="public/css/styles.css">
     <script src="public/js/Server.js"></script>
     <script src="public/js/main.js"></script>
 </head>
 <body>
+    <div class = "logo">
+        <a href="index.html"><img src="public\img\logo.jpg" width="50" ></a> 
+    </div>
     <div class="container">
-        <div class="login">
+        <div class="username">
             <input id="reg_name" type="text" placeholder="Введите имя пользователя" required>
-            <input id="reg_login" type="text" placeholder="Введите логин" required>
-            <input id="reg_password" type="password" placeholder="Введите пароль" required>
-            <button id="reg_btn" type="button">Зарегистрироваться</button>
         </div>
+        
+        <div class="username">
+            <input id="reg_login" type="text" placeholder="Введите логин" required>
+        </div>
+        
+        <div class="password">
+            <input id="reg_password" type="password" placeholder="Введите пароль" required>
+        </div>
+        <div class="user-reg">
+            <button id="reg_btn" type="button">Регистрация</button>
+        </div>
+        
     </div>
 </body>
 </html>

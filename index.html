@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        if (localStorage.getItem('token')) {
-            document.location.href = "./game.html";
-        }
-        window.onload = function() {
-            document.getElementById('log').addEventListener('click', function () {
-                document.location.href = "./login.html";
-            });
-            document.getElementById('reg').addEventListener('click', function () {
-                document.location.href = "./registration.html";
-            })
-        }
-    </script>
-    <title>Start</title>
+    <title>Snake</title>
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
-    <button id="log" type="button">Войти</button>
-    <button id="reg" type="button">Регистрация</button>
+    
+    <div class="main_screen">
+            <nav class = "head">
+                <a href="login.html">
+                    <img class = "log" src="public\img\login.jpg"  width="88" height="51">
+                </a>
+    
+                <a href="registration.html">
+                    <img class = "reg" src="public\img\button_registr.jpg"  width="167" height="51">
+                </a>
+            </nav>
+            
+            <div class = "but">
+                <a href="game.html">
+                    <img class = "play" src="public\img\play_round.jpg"  width="320" >
+                </a>
+            </div>
+            
+        
+    </div>
+    
 </body>
 </html>

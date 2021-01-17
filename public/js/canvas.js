@@ -30,7 +30,7 @@ class Canvas{
             this.context.rect(snake.coord[i].x * this.split, snake.coord[i].y * this.split, this.split, this.split);
         }
         this.context.closePath();
-        this.context.strokeStyle = "blue";
+        this.context.strokeStyle = "white";
         this.context.fillStyle = "green";
         this.context.fill();
         this.context.stroke();

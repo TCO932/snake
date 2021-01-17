@@ -1,0 +1,71 @@
+body {
+    background: #fff;
+    margin: 0%;
+    
+}
+
+.main_screen {
+    background-image: url('../img/main_reg_log2.jpg');
+    background-attachment: scroll;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: block;
+    height: 800px;
+}
+
+
+.logo {
+    margin-top: 65px ;
+    margin-left: 80px;
+    max-width: 150px;
+}
+
+.container_game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.tabl {
+    margin-left: 80px;
+}
+
+.cont_bt {
+    margin-right: 80px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-reg button {
+    cursor: pointer;
+    margin: 15px auto;
+    background-color: #fff;
+    width: 150px;
+    padding: 10px;
+    border-radius: 33px;
+    border-color: #000;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+    outline: none;
+}
+
+.user-reg button:hover {
+    color: #fff;
+    background: #000;
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear; 
+}
+
+.user-reg button:active {
+    color: #fff;
+    background: #43BA63;
+    transition: color 2s ;
+    
+}

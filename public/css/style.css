@@ -1,0 +1,44 @@
+body {
+    background: #C4DCCB;
+    margin: 0%;
+    
+}
+
+.main_screen {
+    background-image: url('../img/main.jpg');
+    background-attachment: scroll;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: block;
+}
+
+.head {
+    margin-top: 70px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.reg, .log {
+    cursor: pointer;
+    position: relative;
+    margin: 0 10px;
+}
+
+
+.but {
+    margin-top: 800px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.play {
+    cursor: pointer;
+    position: relative;
+}
+
+
+

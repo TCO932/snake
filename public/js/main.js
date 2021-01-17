@@ -85,6 +85,8 @@ window.onload = function () {
                 };
         })();
     
+        let game = true;
+
         const canvas = new Canvas({
             id: "canvas",
             WIDTH: 500,
@@ -96,17 +98,22 @@ window.onload = function () {
         let fruit = new Fruit(20, 20);
         
         window.addEventListener("keydown", onKeyDown, false);
+        but = document.getElementById("restart");
+        but.onclick = function(){
+            if (!game){
+                game = true;
+                snake = new Snake(0, 0, 5, 1);
+                fruit = new Fruit(20, 20);
+            }
+        }
     
         //Движения змеи(игрока)
         function onKeyDown(event){
             var keyCode = event.keyCode;
             snake.ChangeDir(keyCode);
         }
-    
-        //Появление фруктов
-    
+
         //Игровой процесс
-        let game = true;
         let FPS = 0;
         let FPSout = 0;
         let timestamp = (new this.Date()).getTime();
@@ -138,30 +145,29 @@ window.onload = function () {
                     snake.coord[0].y = canvas.fieldH;
                 }
     
-                    //Проверка на столкновение змеи с собой
-                    for (let i = 1; i < snake.size; i++){
-                    if (snake.coord[0].x == snake.coord[i].x && snake.coord[0].y == snake.coord[i].y){
-                        game = false;
-                        alert("You are dead");
-                    }
-                }
-    
                 //Проверка на столкновение с едой
                 if (snake.coord[0].x == fruit.x && snake.coord[0].y == fruit.y){
                     fruit.eat(50, 50);
                     snake.grow();
                 }
-    
+                //Проверка на столкновение змеи с собой
+                for (let i = 1; i < snake.size; i++){
+                    if (snake.coord[0].x == snake.coord[i].x && snake.coord[0].y == snake.coord[i].y){
+                        game = false;
+                        alert("You are dead");
+                    }
+                }
+            }
                 render();//рисуем сцену
                 requestAnimFrame(animloop); //зацикливаем отрисовку
-                canvas.drawText(10, 10, "Score: " + fruit.count);
-        }})();
+        })();
     
         //Отрисовка изображения
         function render() {
             canvas.clear();
             canvas.drawSnake(snake);
             canvas.drawFruit(fruit);
+            canvas.drawText(10, 10, "Score: " + fruit.count);
         }
     }
 }
